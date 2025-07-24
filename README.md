@@ -1,8 +1,9 @@
 # 🎁 Amigo Secreto
 
-Este proyecto es una pequeña aplicación web hecha con **HTML**, **CSS** y **JavaScript** que permite organizar un sorteo de "Amigo Secreto".
+Este proyecto es una pequeña aplicación web hecha con **HTML**, **CSS** y **JavaScript puro** que permite organizar un sorteo de "Amigo Secreto".
 
-Los usuarios pueden ingresar nombres en una lista, y al presionar el botón de sorteo, se elige un nombre al azar. Es ideal para juegos, fiestas o celebraciones.
+Los usuarios pueden ingresar nombres en una lista, y al presionar el botón de sorteo, se elige un nombre al azar.  
+Es ideal para juegos, fiestas o celebraciones.
 
 ---
 
@@ -18,19 +19,27 @@ Los usuarios pueden ingresar nombres en una lista, y al presionar el botón de s
 
 ## 🛠️ Tecnologías utilizadas
 
-- HTML5
-- CSS3
+- HTML5  
+- CSS3  
 - JavaScript (puro / vanilla)
 
 ---
 
-## 📷 Captura de pantalla
+## 🔗 Demo en vivo
 
-<!-- Agregá tu imagen aquí si tenés una -->
-![Demo Amigo Secreto](ruta/a/tu-imagen.png)
+👉 [Ver Demo en GitHub Pages](https://fenixblue-dev.github.io/Amigo-Secreto-)
+
+---
+
+## 🖼️ Captura de pantalla
+
+![Demo Amigo Secreto](https://fenixblue-dev.github.io/Amigo-Secreto-/captura.png) <!-- Cambiá esto si tenés una imagen real -->
 
 ---
 
 ## 📦 Cómo usar el proyecto
 
-1. Cloná o descargá el repos
+1. Cloná o descargá el repositorio:
+
+```bash
+git clone https://github.com/fenixblue-dev/Amigo-Secreto-.git
