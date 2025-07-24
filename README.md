@@ -41,5 +41,21 @@ Es ideal para juegos, fiestas o celebraciones.
 
 1. Cloná o descargá el repositorio:
 
-```bash
+bash
 git clone https://github.com/fenixblue-dev/Amigo-Secreto-.git
+
+## 🧑‍💻 Autor
+
+**Sergio Ismael Calbo Mancilla**  
+Desarrollador Front-End  
+Apasionado por la creatividad, la tecnología y el aprendizaje constante.  
+Actualmente cursando el programa **Oracle Next Education (ONE)** en alianza con **Alura LATAM**, en el área de Front-End.
+
+Busco crecer profesionalmente en proyectos reales mientras aporto valor con mis conocimientos.
+
+---
+
+## 📬 Contacto
+
+- LinkedIn: [Sergio Ismael Calbo Mancilla](https://www.linkedin.com/in/sergio-ismael-calbo-mancilla/)
+- GitHub: [@fenixblue-dev](https://github.com/fenixblue-dev)
