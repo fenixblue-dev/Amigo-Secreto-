@@ -1,23 +1,26 @@
-// Lista donde se guardarán los nombres
-const nombres = [];
+let nombres = [];
 
-// Función para adicionar un nombre a la lista
 function adicionarNombre() {
   const input = document.getElementById("nombreInput");
   const nombre = input.value.trim();
 
   if (nombre === "") {
-    alert("Por favor ingresa un nombre válido.");
+    alert("Por favor ingresá un nombre válido.");
+    return;
+  }
+
+  if (nombres.includes(nombre)) {
+    alert("Ese nombre ya fue agregado.");
+    input.value = "";
     return;
   }
 
   nombres.push(nombre);
-  mostrarLista();
+  actualizarLista();
   input.value = "";
 }
 
-// Función para mostrar la lista actualizada en pantalla
-function mostrarLista() {
+function actualizarLista() {
   const lista = document.getElementById("listaNombres");
   lista.innerHTML = "";
 
@@ -28,16 +31,11 @@ function mostrarLista() {
   });
 }
 
-// Función para sortear un nombre al azar
 function sortearAmigo() {
-  if (nombres.length === 0) {
-    alert("No hay nombres para sortear.");
+  if (nombres.length < 2) {
+    alert("Agregá al menos dos nombres para hacer el sorteo.");
     return;
   }
 
-  const indice = Math.floor(Math.random() * nombres.length);
-  const seleccionado = nombres[indice];
+  // Copiar y mezclar lo
 
-  const resultado = document.getElementById("resultado");
-  resultado.textContent = `🎉 El amigo secreto es: ${seleccionado}`;
-    }
