@@ -1,20 +1,41 @@
 body {
   font-family: Arial, sans-serif;
   padding: 20px;
-  background-color: #f0f8ff;
+  background-image: url('img/fondo.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }
+
 h1 {
-  color: #333;
+  color: #fff;
   text-align: center;
+  text-shadow: 2px 2px 4px #000;
 }
+
+.decoracion {
+  display: block;
+  margin: 10px auto;
+  width: 120px;
+  animation: flotar 3s ease-in-out infinite;
+}
+
+@keyframes flotar {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
 #app {
   max-width: 400px;
-  margin: 0 auto;
-  background: #fff;
+  margin: 20px auto;
+  background: rgba(255, 255, 255, 0.9);
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
 }
+
 input[type="text"] {
   width: 70%;
   padding: 10px;
@@ -22,6 +43,7 @@ input[type="text"] {
   border-radius: 5px;
   border: 1px solid #ccc;
 }
+
 button {
   padding: 10px 15px;
   border: none;
@@ -30,19 +52,23 @@ button {
   border-radius: 5px;
   cursor: pointer;
 }
+
 button:hover {
   background-color: #005fa3;
 }
+
 ul {
   list-style: none;
   padding: 0;
 }
+
 li {
   background-color: #e6f2ff;
   margin: 5px 0;
   padding: 8px;
   border-radius: 5px;
 }
+
 #resultado {
   margin-top: 20px;
   font-size: 1.2em;
