@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Amigo Secreto</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Amigo Secreto 🎁</h1>
+  <h1>Juego de Amigo Secreto 🎁</h1>
 
-  <div id="app">
-    <input type="text" id="nombreInput" placeholder="Nombre del amigo">
-    <button onclick="adicionarNombre()">Adicionar</button>
+  <input type="text" id="nombreInput" placeholder="Nombre del participante">
+  <button onclick="adicionarParticipante()">Adicionar</button>
 
-    <ul id="listaNombres"></ul>
+  <ul id="listaParticipantes"></ul>
 
-    <button onclick="sortearAmigo()">Sortear Amigo</button>
+  <button onclick="sortearAmigoSecreto()">Sortear Amigo Secreto</button>
 
-    <div id="resultado"></div>
-  </div>
+  <h3>Resultado:</h3>
+  <ul id="resultado"></ul>
 
   <script src="Script.js"></script>
 </body>
-</html>o
+</html>
