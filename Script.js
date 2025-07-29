@@ -1,16 +1,32 @@
 const participantes = [];
 
+document.addEventListener("DOMContentLoaded", () => {
+  const btnAdicionar = document.getElementById("btnAdicionar");
+  const btnSortear = document.getElementById("btnSortear");
+
+  btnAdicionar.addEventListener("click", adicionarParticipante);
+  btnSortear.addEventListener("click", sortearAmigoSecreto);
+});
+
 function adicionarParticipante() {
   const input = document.getElementById("nombreInput");
   const nombre = input.value.trim();
 
-  if (nombre && !participantes.includes(nombre)) {
-    participantes.push(nombre);
-
-    const li = document.createElement("li");
-    li.textContent = nombre;
-    document.getElementById("listaParticipantes").appendChild(li);
+  if (nombre === "") {
+    alert("Escribí un nombre.");
+    return;
   }
+
+  if (participantes.includes(nombre)) {
+    alert("Ese nombre ya fue agregado.");
+    return;
+  }
+
+  participantes.push(nombre);
+
+  const li = document.createElement("li");
+  li.textContent = nombre;
+  document.getElementById("listaParticipantes").appendChild(li);
 
   input.value = "";
   input.focus();
@@ -25,15 +41,14 @@ function mezclar(array) {
 
 function sortearAmigoSecreto() {
   if (participantes.length < 2) {
-    alert("Agrega al menos 2 participantes");
+    alert("Agregá al menos 2 participantes.");
     return;
   }
 
-  let asignados;
+  let asignados = [...participantes];
   let valido = false;
 
   while (!valido) {
-    asignados = [...participantes];
     mezclar(asignados);
     valido = participantes.every((p, i) => p !== asignados[i]);
   }
@@ -46,5 +61,5 @@ function sortearAmigoSecreto() {
     li.textContent = `${persona} → ${asignados[i]}`;
     resultado.appendChild(li);
   });
-    }
+}
 
