@@ -1,41 +1,38 @@
-let nombres = [];
 
-function adicionarNombre() {
-  const input = document.getElementById("nombreInput");
-  const nombre = input.value.trim();
+  // Suponiendo que tienes un arreglo con los nombres de los participantes
+const participantes = ["Ana", "Bruno", "Carla", "Diego", "Elena"];
 
-  if (nombre === "") {
-    alert("Por favor ingresá un nombre válido.");
-    return;
+function mezclar(array) {
+  // Algoritmo de Fisher-Yates para mezclar aleatoriamente
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
   }
-
-  if (nombres.includes(nombre)) {
-    alert("Ese nombre ya fue agregado.");
-    input.value = "";
-    return;
-  }
-
-  nombres.push(nombre);
-  actualizarLista();
-  input.value = "";
+  return array;
 }
 
-function actualizarLista() {
-  const lista = document.getElementById("listaNombres");
-  lista.innerHTML = "";
+function asignarAmigosSecretos(participantes) {
+  let asignados;
+  let valido = false;
 
-  nombres.forEach((nombre) => {
-    const li = document.createElement("li");
-    li.textContent = nombre;
-    lista.appendChild(li);
+  while (!valido) {
+    asignados = [...participantes];
+    mezclar(asignados);
+    valido = participantes.every((persona, i) => persona !== asignados[i]);
+  }
+
+  const resultado = {};
+  participantes.forEach((persona, i) => {
+    resultado[persona] = asignados[i];
   });
+
+  return resultado;
 }
 
-function sortearAmigo() {
-  if (nombres.length < 2) {
-    alert("Agregá al menos dos nombres para hacer el sorteo.");
-    return;
-  }
-
-  
+// Para mostrar el resultado
+const resultado = asignarAmigosSecretos(participantes);
+console.log("🎁 Resultado del Amigo Secreto:");
+for (const persona in resultado) {
+  console.log(`${persona} → ${resultado[persona]}`);
+}
 
