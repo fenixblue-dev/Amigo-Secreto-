@@ -1,38 +1,50 @@
+const participantes = [];
 
-  // Suponiendo que tienes un arreglo con los nombres de los participantes
-const participantes = ["Ana", "Bruno", "Carla", "Diego", "Elena"];
+function adicionarParticipante() {
+  const input = document.getElementById("nombreInput");
+  const nombre = input.value.trim();
+
+  if (nombre && !participantes.includes(nombre)) {
+    participantes.push(nombre);
+
+    const li = document.createElement("li");
+    li.textContent = nombre;
+    document.getElementById("listaParticipantes").appendChild(li);
+  }
+
+  input.value = "";
+  input.focus();
+}
 
 function mezclar(array) {
-  // Algoritmo de Fisher-Yates para mezclar aleatoriamente
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [array[i], array[j]] = [array[j], array[i]];
   }
-  return array;
 }
 
-function asignarAmigosSecretos(participantes) {
+function sortearAmigoSecreto() {
+  if (participantes.length < 2) {
+    alert("Agrega al menos 2 participantes");
+    return;
+  }
+
   let asignados;
   let valido = false;
 
   while (!valido) {
     asignados = [...participantes];
     mezclar(asignados);
-    valido = participantes.every((persona, i) => persona !== asignados[i]);
+    valido = participantes.every((p, i) => p !== asignados[i]);
   }
 
-  const resultado = {};
+  const resultado = document.getElementById("resultado");
+  resultado.innerHTML = "";
+
   participantes.forEach((persona, i) => {
-    resultado[persona] = asignados[i];
+    const li = document.createElement("li");
+    li.textContent = `${persona} → ${asignados[i]}`;
+    resultado.appendChild(li);
   });
-
-  return resultado;
-}
-
-// Para mostrar el resultado
-const resultado = asignarAmigosSecretos(participantes);
-console.log("🎁 Resultado del Amigo Secreto:");
-for (const persona in resultado) {
-  console.log(`${persona} → ${resultado[persona]}`);
-}
+    }
 
